@@ -1,0 +1,21 @@
+.profile__left {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    left: -22.5px;
+    top: -3.45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+}
+
+@media screen and (max-width: 768px)  {
+    .profile__left {
+        left: 0;
+        top: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}

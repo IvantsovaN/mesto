@@ -1,0 +1,32 @@
+.add-button {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 150px;
+    height: 50px;
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    box-sizing: border-box;
+    background-image: url(../../images/plus.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 768px)  {
+    .add-button {
+        width: 282px;
+        min-width: 200px;
+        background-size: 17px 17px;
+    }
+}
