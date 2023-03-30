@@ -11,7 +11,7 @@
 
 **Ссылка**
 
-* [Ссылка на проект в GitHab](https://ivantsovan.github.io/russian-travel/)
+* [Ссылка на проект в GitHab](https://ivantsovan.github.io/mesto/)
 
 **Автор**
 
