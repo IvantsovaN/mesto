@@ -1,15 +1,16 @@
-.info {
+.profile__segment {
     max-width: 560px;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+  
        
 }
 
 @media screen and (max-width: 768px)  {
-    .info{
+    .profile__segment{
         min-width: 282px;
         justify-content:center;
     }

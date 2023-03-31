@@ -1,4 +1,4 @@
-.popup__button-X {
+.popup__button-x {
     position: absolute;
     top: -40px;
     right: -40px;
@@ -9,20 +9,20 @@
     display: flex;
     border: none;
     box-sizing: border-box;
-    background-image: url(../../../images/Close\ Icon.png);
+    background-image: url(../../../images/Close\ Icon.svg);
     background-position: center;
     background-size: cover;
-    background-color: #000000;
+    background-color: transparent;
     cursor: pointer;
     
 }
 
-.popup__button-X:hover {
+.popup__button-x:hover {
     opacity: 0.6;
 }
 
 @media screen and (max-width: 768px)  {
-    .popup__button-X {
+    .popup__button-x {
         width: 20px;
         height: 20px;
         right: 0;

@@ -1,8 +1,8 @@
-.mask-group {
+.element__group {
     max-width: 246px;
     min-height: 23px;
     padding: 0;
-    margin:  22px 15px 28px 21px;
+    margin:  30px 15px 28px 21px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

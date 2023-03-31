@@ -1,9 +1,12 @@
 
-const buttonEd = document.querySelector('.edit-button');
+const buttonEd = document.querySelector('.profile__edit-button');
 const popup = document.querySelector('.popup');
-const buttonX = document.querySelector('.popup__button-X');
-const titleName = document.querySelector('.title-info');
-const textAbout = document.querySelector('.text-info');
+const buttonX = document.querySelector('.popup__button-x');
+const titleName = document.querySelector('.profile__title');
+const textAbout = document.querySelector('.profile__text');
+const formElement = document.querySelector('.popup__form');
+const nameInput = document.querySelector('.popup__text_type_name');
+const jobInput = document.querySelector('.popup__text_type_about');
 
 
 buttonEd.addEventListener('click', function () {
@@ -15,16 +18,14 @@ buttonX.addEventListener('click', function () {
   popup.classList.remove('popup_opened');
   }); 
 
-const formElement = document.querySelector('.popup__form');
-const nameInput = document.querySelector('.popup__text_type_name');
-const jobInput = document.querySelector('.popup__text_type_about');
+
 
   
 function handleFormSubmit (evt) {
     evt.preventDefault();
   
-  titleName.innerHTML =`<h1 class="title-info">${nameInput.value}</h1>`;
-  textAbout.innerHTML = `<p class="text-info">${jobInput.value}</p>`;
+  titleName.textContent = nameInput.value
+  textAbout.textContent = jobInput.value;
   popup.classList.remove('popup_opened');
 }
 

@@ -1,4 +1,4 @@
-.add-button {
+.profile__add-button {
     position: relative;
     padding: 0;
     margin: 0;
@@ -11,7 +11,7 @@
     justify-content: center;
     align-self: center;
     box-sizing: border-box;
-    background-image: url(../../images/plus.png);
+    background-image: url(../../../images/Plus.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 22px 22px;
@@ -19,12 +19,12 @@
     cursor: pointer;
 }
 
-.add-button:hover {
+.profile__add-button:hover {
     opacity: 0.6;
 }
 
 @media screen and (max-width: 768px)  {
-    .add-button {
+    .profile__add-button {
         width: 282px;
         min-width: 200px;
         background-size: 17px 17px;

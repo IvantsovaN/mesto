@@ -9,66 +9,64 @@
 <body class="page">
   <div class="page__container">    
     <header class="header">
-      <img class="header__logo" src="./images/Vector.png" alt="логотип">
+      <img class="header__logo" src="./images/Mesto.svg" alt="логотип">
     </header> 
     <main class="content">
-      <div class="profile">
+      <section class="profile">
         <div class="profile__left">
-          <section class="avatar">
-            <img class="avatar__ellipse" src="./images/image.jpg" alt="Фотография Кусто">
-          </section>
-          <section class="profile-info">
-            <div class="info">
-              <h1 class="title-info">Жак-Ив Кусто</h1>
-              <button type="submit" class="edit-button"></button>
+          <img class="profile__avatar" src="./images/image.jpg" alt="Фотография Кусто">
+          <div class="profile__info">
+            <div class="profile__segment">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button type="button" class="profile__edit-button"></button>
             </div>
-            <p class="text-info">Исследователь океана</p>
-          </section>
+            <p class="profile__text">Исследователь океана</p>
+          </div>
         </div>  
-        <button type="submit" class="add-button"></button>
-      </div>
+        <button type="button" class="profile__add-button"></button>
+      </section>
       <section aria-label="elements">
         <ul class="elements">
           <li class="element">                    
             <img  class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
-            <div class="mask-group">
-              <p class="mask-group__text">Карачаевск</p>
-              <button type="submit" class="mask-group__button"></button>
+            <div class="element__group">
+              <h2 class="element__text">Карачаевск</h2>
+              <button type="button" class="element__button"></button>
             </div>          
           </li>
           <li class="element">                    
             <img  class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
-            <div class="mask-group">
-              <p class="mask-group__text">Карачаевск</p>
-              <button type="submit" class="mask-group__button"></button>
+            <div class="element__group">
+              <h2 class="element__text">Карачаевск</h2>
+              <button type="button" class="element__button"></button>
             </div>  
           </li>
           <li class="element">                    
             <img  class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
-            <div class="mask-group">
-              <p class="mask-group__text">Карачаевск</p>
-              <button type="submit" class="mask-group__button"></button>
+            <div class="element__group">
+              <h2 class="element__text">Карачаевск</h2>
+              <button type="button" class="element__button"></button>
             </div>             
           </li>
           <li class="element">                    
             <img  class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
-            <div class="mask-group">
-              <p class="mask-group__text">Карачаевск</p>
-              <button type="submit" class="mask-group__button"></button>
+            <div class="element__group">
+              <h2 class="element__text">Карачаевск</h2>
+              <button type="button" class="element__button"></button>
             </div>              
           </li>
           <li class="element">                    
             <img  class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
-            <div class="mask-group">
-              <p class="mask-group__text">Карачаевск</p>
-              <button type="submit" class="mask-group__button"></button>
+            <div class="element__group">
+              <h2 class="element__text">Карачаевск</h2>
+              <button type="button" class="element__button"></button>
             </div>             
           </li>
           <li class="element">                    
             <img  class="element__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
-            <div class="mask-group">
-              <p class="mask-group__text">Карачаевск</p>
-              <button type="submit" class="mask-group__button"></button>
+            <div class="element__group">
+              <h2 class="element__text">Карачаевск</h2>
+              <button type="button" class="element__button"></button>
             </div>              
           </li>
         </ul>
@@ -78,15 +76,15 @@
       <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
     <div class="popup">
-      <section class="popup__container">
+      <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form">
+        <form class="popup__form" name="popup">
         <input type="text" class="popup__text popup__text_type_name" name="name" id="name">
         <input type="text" class="popup__text popup__text_type_about" name="about" id="about">
         <button type="submit" class="popup__button">Сохранить</button>
         </form>
-        <button type="submit" class="popup__button-X"></button>
-      </section>
+        <button type="submit" class="popup__button-x"></button>
+      </div>
     </div>
   </div>
   <script src="scripts/index.js"></script> 

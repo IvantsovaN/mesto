@@ -1,21 +1,18 @@
-.mask-group__button {
+.element__button {
     position: relative;
     width: 22px;
     height: 19px;
     margin: 0;
     padding: 0;
-    background-image: url(../../../images/Vector\ \(Stroke\).png);
     background-position: center;
     background-size: cover;
+    background: transparent;
+    background-image: url(../../../images/Like.svg);
     border: 0px;
     cursor: pointer;
 }
 
-.mask-group__button:hover {
+.element__button:hover {
     opacity: 0.5;
-}
-
-.mask-group__button:active {
-   color: grey;
 }
 
