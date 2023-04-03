@@ -2,7 +2,7 @@
     position: relative;
     margin: 0 18px 12px 0;
     padding: 0;
-    max-width: 460px;
+    max-width: 400px;
     box-sizing: content-box;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -18,9 +18,9 @@
 }   
 
 
-@media screen and (max-width: 768px)  {
+@media screen and (max-width: 880px)  {
     .profile__title {
-        max-width: 280px;
+        max-width: 220px;
         min-width: 150px;
         margin: 29.25px 10px 6px 28px;
         font-size: 27px;

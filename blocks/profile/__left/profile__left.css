@@ -9,10 +9,11 @@
     
 }
 
-@media screen and (max-width: 768px)  {
+@media screen and (max-width: 880px)  {
     .profile__left {
         flex-direction: column;
         align-items: center;
+        align-self: center;
        
     }
 }
