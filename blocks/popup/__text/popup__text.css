@@ -1,7 +1,7 @@
 .popup__text {
     position: relative;
     margin: 0 36px 25px 36px;
-    padding: 0 0 13px 0;
+    padding: 0 0 10px 0;
     width: 358px;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -19,7 +19,7 @@
 
 @media screen and (max-width: 768px)  {
     .popup__text {
-        margin: 0 22px 25px 22px;
+        margin: 0 22px 27px 22px;
         width: 238px;
     }
 }
