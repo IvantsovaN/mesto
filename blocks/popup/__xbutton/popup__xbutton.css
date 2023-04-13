@@ -1,4 +1,4 @@
-.popup__button-x {
+.popup__xbutton {
     position: absolute;
     top: -38px;
     right: -40px;
@@ -17,12 +17,12 @@
     
 }
 
-.popup__button-x:hover {
+.popup__xbutton:hover {
     opacity: 0.6;
 }
 
 @media screen and (max-width: 768px)  {
-    .popup__button-x {
+    .popup__xbutton {
         width: 20px;
         height: 20px;
         right: 0;

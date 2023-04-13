@@ -1,4 +1,4 @@
-.element__button {
+.element__like {
     position: relative;
     width: 22px;
     height: 19px;
@@ -12,7 +12,10 @@
     cursor: pointer;
 }
 
-.element__button:hover {
+.element__like:hover {
     opacity: 0.5;
 }
 
+.element__like:active {
+    background-image: url(../../../images/LikeBlack.svg);
+}
