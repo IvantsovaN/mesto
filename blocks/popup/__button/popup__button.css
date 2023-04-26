@@ -1,7 +1,7 @@
 .popup__button {
     position: relative;
     padding: 0;
-    margin: 23px 36px 7px 36px;
+    margin: 23px 36px 7px 0;
     width: 358px;
     height: 50px;
     border: 1px solid #000000;
@@ -31,7 +31,8 @@
         width: 238px;
         height: 46px;
         font-size: 14px;
-        margin: 18px 22px 25px 22px;
+        margin: 18px 22px 25px 0;
         line-height: 1.21;
     }
 }
+

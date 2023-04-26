@@ -9,43 +9,49 @@
   const buttonEditClose = document.querySelector('.popup__xbutton_type_edit');
   const pictureTemplate = document.getElementById('pictures-template');
   const pictureFlex = document.querySelector('.elements');
-  const addPicturePopup = document.querySelector('.popup_add');
   const addPictureButton = document.querySelector('.profile__add-button');
   const addPictureForm = document.querySelector('.popup__form_type_add');
   const popupAdd = document.querySelector('.popup_add');
   const buttonAddClose = document.querySelector('.popup__xbutton_type_add');
   const pictureCover = document.querySelector('.popup_picture');
   const buttonPictureClose = document.querySelector('.popup__xbutton_type_picture');
-
+  
+  
   buttonEdit.addEventListener('click', () => {
     openPopup(popupEdit);
     nameInput.value = profileName.textContent;
     aboutInput.value = textAbout.textContent;
-    }); 
+  }); 
 
   buttonEditClose.addEventListener('click', () => {
     closePopup(popupEdit);
-    }); 
-      
+  }); 
+
+   
+  formElement.addEventListener('mouseleave', (evt) => {
+    popupEdit.addEventListener('click', (evt) => {
+      closePopup(popupEdit);
+    })
+  });
+           
   function handleEditFormSubmit (evt) {
     evt.preventDefault();
       
     profileName.textContent = nameInput.value;
     textAbout.textContent = aboutInput.value;
     closePopup(popupEdit);
+    
   }
-    formElement.addEventListener('submit', handleEditFormSubmit);
   
-     
+  formElement.addEventListener('submit', handleEditFormSubmit);    
     
   
   const createPictureElement = (imageDate) => {
     const pictureElement = pictureTemplate.content
-    .querySelector('.element')
-    .cloneNode(true);
+      .querySelector('.element')
+      .cloneNode(true);
     const pictureTitle = pictureElement.querySelector('.element__text');
     const pictureImage = pictureElement.querySelector('.element__image');
-    
     
     pictureTitle.textContent= imageDate.title;
     pictureImage.src = imageDate.link;
@@ -53,8 +59,7 @@
 
     const deleteButton = pictureElement.querySelector('.element__delete');
     const likeButton = pictureElement.querySelector('.element__like');
-    
-       
+           
     const handleDelete = () => {
       pictureElement.remove();
     };
@@ -77,11 +82,17 @@
       picturePopup.alt = pictureTitle.alt ;
       textPopup.textContent = pictureTitle.textContent;
       openPopup(pictureCover);
+      
+      picturePopup.addEventListener('mouseleave', (evt) => {
+        pictureCover.addEventListener('click', (evt) => {
+          closePopup(pictureCover);
+        })
+      });
     }         
-        pictureImage.addEventListener ('click', handlePictureImage);
+    pictureImage.addEventListener ('click', handlePictureImage);
     
     return pictureElement;
-
+  
   };
   
   const renderPictureElement = (pictureElement) => {
@@ -94,16 +105,29 @@
   
   const openPopup = (popup) => {
     popup.classList.add('popup_opened');
+    document.addEventListener('keydown', (evt) => {
+      if (evt.key === 'Escape') {
+        closePopup(popup);        
+      };
+    });       
   }
 
+  
   const closePopup = (popup) => {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', (closePopup));
+    
   };
 
   addPictureButton.addEventListener ('click', () => {
-    openPopup(addPicturePopup);
+    openPopup(popupAdd);
   })
 
+  addPictureForm.addEventListener('mouseleave', (evt) => {
+    popupAdd.addEventListener('click', (evt) => {
+      closePopup(popupAdd);
+    })
+  });
   
   const handleAddPictureSubmit = (event) => {
     event.preventDefault();
@@ -117,24 +141,23 @@
     const imageData = {
       title,
       link   
-     };
+    };
    
-     addPictureForm.reset(title, link);
+    addPictureForm.reset(title, link);
 
     renderPictureElement(createPictureElement(imageData));
-    closePopup(addPicturePopup);
-    
+    closePopup(popupAdd);   
+
   };
    
   buttonAddClose.addEventListener('click', () => {
     closePopup(popupAdd);
-    }); 
-    
+    });    
   
   addPictureForm.addEventListener("submit", handleAddPictureSubmit);
-    
-
-   buttonPictureClose.addEventListener('click', () => {
+  
+  buttonPictureClose.addEventListener('click', () => {
     closePopup(pictureCover);
-    }); 
+  }); 
 
+    
