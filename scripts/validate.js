@@ -40,7 +40,7 @@ const setEventListeners = (config, formElement) => {
   const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
-  toggleButtonState(config, inputList, buttonElement); /* деактивация при открытии формы */
+  toggleButtonState(config, inputList, buttonElement); 
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function () {

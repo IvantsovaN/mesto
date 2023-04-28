@@ -16,8 +16,10 @@
   const textPopup = pictureCover.querySelector('.popup__element-text');
   const titleInput = addPictureForm.querySelector('.popup__text_type_title');
   const linkInput = addPictureForm.querySelector('.popup__text_type_link');
+  const buttonSubmitAdd = addPictureForm.querySelector('.popup__button_type_add');
   const popups = document.querySelectorAll('.popup');
-  const textErrror = document.querySelectorAll('.error-message');
+  const listErrorEdit = formElement.querySelectorAll('.error-message');
+  
 
   popups.forEach((popup) => {
       popup.addEventListener('mousedown', (evt) => {
@@ -33,7 +35,12 @@
   buttonEdit.addEventListener('click', () => {
     openPopup(popupEdit);
     nameInput.value = profileName.textContent;
-    aboutInput.value = textAbout.textContent;    
+    aboutInput.value = textAbout.textContent; 
+    listErrorEdit.forEach((item) => {
+      item.textContent = '';
+    });
+    nameInput.classList.remove('popup__text_invalid');
+    aboutInput.classList.remove('popup__text_invalid');
   });  
             
   function handleEditFormSubmit (evt) {
@@ -106,12 +113,13 @@
     
   const closePopup = (popup) => {
     popup.classList.remove('popup_opened');
-    textErrror.textContent = '';
     document.removeEventListener('keydown', closeByEscape);    
   };
 
   addPictureButton.addEventListener ('click', () => {
     openPopup(popupAdd);
+    buttonSubmitAdd.setAttribute('disabled', ''); 
+    buttonSubmitAdd.classList.add('popup__button_disabled'); 
   })
     
   const handleAddPictureSubmit = (event) => {
