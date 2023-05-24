@@ -1,7 +1,8 @@
+import {openPopup, closePopup} from './utils.js';
 class Card {
-    constructor(title, link, templateSelector) {
-        this._title = title;
-        this._image = link;
+    constructor(data, templateSelector) {
+        this._title = data.title;
+        this._image = data.link;
         this._templateSelector = templateSelector        
     }
 
@@ -19,7 +20,7 @@ class Card {
         this._element = this._getTemplate();
         this._element.querySelector('.element__image').src = this._image;
         this._element.querySelector('.element__image').alt = this._title;
-        this._element.querySelector('.element__text').textContent = this._title;        
+        this._element.querySelector('.element__text').textContent = this._title;            
         this._setEventListeners();
         
         return this._element;
@@ -42,13 +43,9 @@ class Card {
         pictureCover.querySelector('.popup__image').alt = this._element.querySelector('.element__image').alt;
         pictureCover.querySelector('.popup__element-text').textContent = this._element.querySelector('.element__text').textContent;
 
-        this._openPopup(pictureCover);  
+        openPopup(pictureCover);  
     } 
     
-    _openPopup = (popup) => {
-        popup.classList.add('popup_opened');              
-    } 
-        
     _setEventListeners() {
         this._element.querySelector('.element__delete').addEventListener('click', () => {
             this._handleDelete();
