@@ -3,7 +3,8 @@ class Card {
     constructor(data, templateSelector) {
         this._title = data.title;
         this._image = data.link;
-        this._templateSelector = templateSelector        
+        this._templateSelector = templateSelector;
+        this._pictureCover = document.querySelector('.popup_picture');
     }
 
     _getTemplate() {
@@ -35,15 +36,12 @@ class Card {
         this._element.querySelector('.element__like').classList.toggle('element__like_active');
     };
 
-    _handlePictureImage = () => {
-        const pictureCover = document
-        .querySelector('.popup_picture');
+    _handlePictureImage = () => {        
+        this._pictureCover.querySelector('.popup__image').src = this._image;
+        this._pictureCover.querySelector('.popup__image').alt = this._title;
+        this._pictureCover.querySelector('.popup__element-text').textContent = this._title;
 
-        pictureCover.querySelector('.popup__image').src = this._element.querySelector('.element__image').src;
-        pictureCover.querySelector('.popup__image').alt = this._element.querySelector('.element__image').alt;
-        pictureCover.querySelector('.popup__element-text').textContent = this._element.querySelector('.element__text').textContent;
-
-        openPopup(pictureCover);  
+        openPopup(this._pictureCover);  
     } 
     
     _setEventListeners() {

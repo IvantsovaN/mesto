@@ -28,9 +28,8 @@ class FormValidator {
 
   resetError () {
     this._inputList.forEach((inputElement) => {
-    inputElement.textContent = '';
-    inputElement.classList.remove(this._inputErrorClass);  
-    }); 
+      this._hideError(inputElement)
+    });
   } 
 
   _hasInvalidInput = () => {
@@ -39,14 +38,18 @@ class FormValidator {
     })
   }; 
  
-  _disableButton () {   
+  _enableButton () {   
     this._buttonElement.classList.add(this._inactiveButtonClass);
-    this._buttonElement.setAttribute('disabled', '');         
+    this._buttonElement.setAttribute('disabled', '');             
   }  
+
+  disableButton () {
+    this._enableButton ()    
+  } 
   
   _toggleButtonState = () => {
     if (this._hasInvalidInput()) {
-      this._disableButton ();           
+      this._enableButton ();           
       } else {
         this._buttonElement.classList.remove(this._inactiveButtonClass);
         this._buttonElement.removeAttribute('disabled');

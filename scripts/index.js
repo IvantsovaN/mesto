@@ -16,6 +16,7 @@ import pictures from './constants.js';
   const popupAdd = document.querySelector('.popup_add');
   const titleInput = formAddPicture.querySelector('.popup__text_type_title');
   const linkInput = formAddPicture.querySelector('.popup__text_type_link');
+  const popups = document.querySelectorAll('.popup');
     
   const config = {
     formSelector: '.popup__form',
@@ -26,7 +27,17 @@ import pictures from './constants.js';
     errorClass: 'error-message_active'
   }; 
 
-  
+  popups.forEach((popup) => {
+    popup.addEventListener('mousedown', (evt) => {
+        if (evt.target.classList.contains('popup_opened')) {
+          closePopup(popup)
+        }
+        if (evt.target.classList.contains('popup__xbutton')) {
+          closePopup(popup)
+        }
+    })
+  });
+
   buttonEdit.addEventListener('click', () => {
     openPopup(popupEdit);
     nameInput.value = profileName.textContent;
@@ -60,7 +71,7 @@ import pictures from './constants.js';
   
   buttonAddPicture.addEventListener ('click', () => {
     openPopup(popupAdd);    
-    _disableButton ();
+    popupAddValidator.disableButton();
   })
     
   const handleAddPictureSubmit = (event) => {
