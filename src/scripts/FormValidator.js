@@ -1,4 +1,4 @@
-class FormValidator {
+export default class FormValidator {
   constructor(config, formElement) {
     this._formSelector = config.formSelector;
     this._inputSelector = config.inputSelector;
@@ -10,8 +10,8 @@ class FormValidator {
     this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
     this._buttonElement = this._formElement.querySelector(this._submitButtonSelector); 
   }
+  popupEdit
 
-  
   _showError (inputElement, errorMessage) {
     const errorElement = this._formElement.querySelector(`#error-${inputElement.id}`);
     inputElement.classList.add(this._inputErrorClass);
@@ -82,5 +82,3 @@ class FormValidator {
     });
   };   
 }
-
-export default FormValidator;

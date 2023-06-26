@@ -1,11 +1,11 @@
-import {openPopup, closePopup} from './utils.js';
-class Card {
-    constructor(data, templateSelector) {
+import PopupWithImage from './PopupWithImage.js'
+export default class Card {
+    constructor(data, handleCardClick, pictureSelector) {
         this._title = data.title;
         this._image = data.link;
-        this._templateSelector = templateSelector;
-        this._pictureCover = document.querySelector('.popup_picture');
-    }
+        this._handleCardClick = handleCardClick;
+        this._pictureSelector = pictureSelector;         
+    };    
 
     _getTemplate() {
         const pictureElement = document
@@ -15,7 +15,7 @@ class Card {
           .cloneNode(true);
     
         return pictureElement;
-    }
+    };
 
     generateCard() {
         this._element = this._getTemplate();
@@ -23,11 +23,10 @@ class Card {
         this._element.querySelector('.element__image').alt = this._title;
         this._element.querySelector('.element__text').textContent = this._title;            
         this._setEventListeners();
-        
+       
         return this._element;
-    }
-     
-                   
+    }; 
+    
     _handleDelete = () => {
         this._element.remove();
     };
@@ -36,14 +35,10 @@ class Card {
         this._element.querySelector('.element__like').classList.toggle('element__like_active');
     };
 
-    _handlePictureImage = () => {        
-        this._pictureCover.querySelector('.popup__image').src = this._image;
-        this._pictureCover.querySelector('.popup__image').alt = this._title;
-        this._pictureCover.querySelector('.popup__element-text').textContent = this._title;
+    _handleClick = () => {
+        this._handleCardClick({ title: this._title, link: this._image })
+    };
 
-        openPopup(this._pictureCover);  
-    } 
-    
     _setEventListeners() {
         this._element.querySelector('.element__delete').addEventListener('click', () => {
             this._handleDelete();
@@ -54,9 +49,9 @@ class Card {
         });
     
         this._element.querySelector('.element__image').addEventListener('click', () => {
-            this._handlePictureImage();
-        });      
-    }  
+            this._handleClick();
+        });    
+    };  
 };
 
-export default Card;
+
