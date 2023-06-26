@@ -1,3 +1,4 @@
+//import  config from '../utils/constants.js';
 export default class FormValidator {
   constructor(config, formElement) {
     this._formSelector = config.formSelector;
@@ -8,10 +9,9 @@ export default class FormValidator {
     this._errorClass = config.errorClass;
     this._formElement = formElement;
     this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
-    this._buttonElement = this._formElement.querySelector(this._submitButtonSelector); 
+    this._buttonElement = this._formElement.querySelector(config.submitButtonSelector); 
   }
-  popupEdit
-
+  
   _showError (inputElement, errorMessage) {
     const errorElement = this._formElement.querySelector(`#error-${inputElement.id}`);
     inputElement.classList.add(this._inputErrorClass);
@@ -50,7 +50,7 @@ export default class FormValidator {
   _toggleButtonState = () => {
     if (this._hasInvalidInput()) {
       this._enableButton ();           
-      } else {
+      } else {        
         this._buttonElement.classList.remove(this._inactiveButtonClass);
         this._buttonElement.removeAttribute('disabled');
     }

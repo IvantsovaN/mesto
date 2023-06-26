@@ -1,15 +1,14 @@
-import PopupWithImage from './PopupWithImage.js'
 export default class Card {
-    constructor(data, handleCardClick, pictureSelector) {
-        this._title = data.title;
-        this._image = data.link;
-        this._handleCardClick = handleCardClick;
-        this._pictureSelector = pictureSelector;         
+    constructor(data, handleCardClick, templateSelector) {
+        this._title = data.title,
+        this._image = data.link,
+        this._handleCardClick = handleCardClick,       
+        this._templateSelector = templateSelector                            
     };    
 
     _getTemplate() {
         const pictureElement = document
-          .querySelector('#pictures-template')
+          .querySelector(this._templateSelector)
           .content
           .querySelector('.element')
           .cloneNode(true);
@@ -19,9 +18,11 @@ export default class Card {
 
     generateCard() {
         this._element = this._getTemplate();
-        this._element.querySelector('.element__image').src = this._image;
-        this._element.querySelector('.element__image').alt = this._title;
-        this._element.querySelector('.element__text').textContent = this._title;            
+        this._cardImage = this._element.querySelector('.element__image');
+        this._cardImage.src = this._image;
+        this._cardImage.alt = this._title;
+        this._element.querySelector('.element__text').textContent = this._title;
+        this._likeButton = this._element.querySelector('.element__like');            
         this._setEventListeners();
        
         return this._element;
@@ -32,7 +33,7 @@ export default class Card {
     };
 
     _handleLike = () => {
-        this._element.querySelector('.element__like').classList.toggle('element__like_active');
+        this._likeButton.classList.toggle('element__like_active');
     };
 
     _handleClick = () => {
@@ -44,11 +45,11 @@ export default class Card {
             this._handleDelete();
         });         
     
-        this._element.querySelector('.element__like').addEventListener('click', () => {
+        this._likeButton.addEventListener('click', () => {
             this._handleLike();
         });
     
-        this._element.querySelector('.element__image').addEventListener('click', () => {
+        this._cardImage.addEventListener('click', () => {
             this._handleClick();
         });    
     };  
