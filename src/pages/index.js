@@ -2,7 +2,7 @@ import '../pages/index.css';
 //import config from '../utils/constants.js'
 import Card from '../components/Сard.js';
 //import Popup from './Popup.js';
-import {buttonEdit, popupEdit, buttonAdd, formAddPicture, popupAdd, titleInput, linkInput} from '../utils/constants.js';
+import {buttonEdit, popupEdit, buttonAdd, formAddPicture, popupAdd, titleInput, linkInput, nameInput, aboutInput} from '../utils/constants.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import FormValidator from '../components/FormValidator.js';
@@ -61,7 +61,9 @@ import Section from '../components/Section.js';
   formEdit.setEventListeners();
 
   buttonEdit.addEventListener('click', () => {
-    userInfo.getUserInfo();     
+    const infoObject = userInfo.getUserInfo();
+      nameInput.value = infoObject.name;
+      aboutInput.value = infoObject.about;      
     popupEditValidator.resetError(); 
     formEdit.open();    
     });

@@ -41,7 +41,10 @@ const pictures = [
   const popupAdd = document.querySelector('.popup_add');
   const titleInput = formAddPicture.querySelector('.popup__text_type_title');
   const linkInput = formAddPicture.querySelector('.popup__text_type_link');
+  const nameInput = document.querySelector('.popup__text_type_name');
+  const aboutInput = document.querySelector('.popup__text_type_about');
+
     
   //export ;  
   export {config, pictures};
-  export {buttonEdit, popupEdit, buttonAdd, formAddPicture, popupAdd, titleInput, linkInput};
+  export {buttonEdit, popupEdit, buttonAdd, formAddPicture, popupAdd, titleInput, linkInput, nameInput, aboutInput};
